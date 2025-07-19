@@ -1,12 +1,12 @@
 async function generateQuote() {
   const quoteBox = document.getElementById("quoteBox");
-  quoteBox.innerText = "⏳ Generating a powerful quote...";
+  quoteBox.innerText = "⏳ Loading...";
 
   try {
-    const response = await fetch("https://api.quotable.io/random");
+    const response = await fetch("https://zenquotes.io/api/random");
     const data = await response.json();
-    quoteBox.innerText = `"${data.content}"\n— ${data.author}`;
+    quoteBox.innerText = `"${data[0].q}"\n— ${data[0].a}`;
   } catch (error) {
-    quoteBox.innerText = "⚠️ Failed to fetch quote. Please try again.";
+    quoteBox.innerText = "⚠️ Failed to fetch quote. Try again.";
   }
 }
