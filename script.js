@@ -4,5 +4,5 @@ function generateQuote() {
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const { quote, author } = quotes[randomIndex];
 
-  quoteBox.innerText = `"${quote}"\n— ${author}`;
+  quoteBox.textContent = `"${quote}"\n— ${author}`;
 }
